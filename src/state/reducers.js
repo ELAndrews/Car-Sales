@@ -9,3 +9,15 @@ export function countReducer(count = initialCount, action) {
       return count;
   }
 }
+
+const initialFeatures = [];
+export function featuresReducer(features = initialFeatures, action) {
+  switch (action.type) {
+    case types.BUYITEM:
+      return [...features, action.payload.feature];
+    case types.REMOVEFEATURE:
+      return features.filter(item => item.id === action.payload.id);
+    default:
+      return features;
+  }
+}

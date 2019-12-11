@@ -8,16 +8,18 @@ import * as reducers from "./state/reducers";
 import "bulma/css/bulma.css";
 import "./styles.scss";
 
-const initialState = {
-    count = 0
-}
+// const initialState = {
+//   count: 0
+//   features: []
+// };
 
-const reducer = combineReducers({
-    count: reducer.countReducer
+const mainReducer = combineReducers({
+  count: reducers.countReducer,
+  features: reducers.featuresReducer
 });
 
 const store = createStore(
-  reducer,
+  mainReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

@@ -2,16 +2,14 @@ import React from "react";
 import { connect } from "react-redux";
 import { increment } from "../state/actionCreators";
 
-const AddedFeature = (props, { count, increment }) => {
+const Counter = ({ count, increment }) => {
   return (
-    <li>
-      {/* Add an onClick to run a function to remove a feature */}
+    <div>
+      <p>This count is {count}</p>
       <button className="button" onClick={increment}>
-        X
+        Add
       </button>
-      {count}
-      {props.feature.name}
-    </li>
+    </div>
   );
 };
 
@@ -21,4 +19,4 @@ function mapstateToProps(state) {
   };
 }
 
-export default connect(mapstateToProps, { increment })(AddedFeature);
+export default connect(mapstateToProps, { increment })(Counter);

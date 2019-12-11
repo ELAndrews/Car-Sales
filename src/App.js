@@ -1,11 +1,10 @@
 import React from "react";
-import { combineReducers, createStore } from "redux";
-import { Provider } from "react-redux";
 
 import Header from "./components/Header";
 import AddedFeatures from "./components/AddedFeatures";
 import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
+import Counter from "./components/Counter";
 
 const App = () => {
   const state = {
@@ -40,6 +39,7 @@ const App = () => {
         <AddedFeatures car={state.car} />
       </div>
       <div className="box">
+        <Counter />
         <AdditionalFeatures additionalFeatures={state.additionalFeatures} />
         <Total car={state.car} additionalPrice={state.additionalPrice} />
       </div>
