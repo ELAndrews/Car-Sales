@@ -13,9 +13,9 @@ export function buyItem(feature) {
   };
 }
 
-export function removeFeature(id) {
+export function removeFeature(feature) {
   return {
     type: types.REMOVEFEATURE,
-    payload: { id }
+    payload: { feature }
   };
 }

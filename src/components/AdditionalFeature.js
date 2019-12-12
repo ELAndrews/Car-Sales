@@ -2,31 +2,20 @@ import React from "react";
 import { connect } from "react-redux";
 import { buyItem } from "../state/actionCreators";
 
-const AdditionalFeature = props => {
-  const handleClick = event => {
-    props.buyItem(event.target.value);
-    console.log(event.target.value);
-  };
-
+const AdditionalFeature = ({ feature, buyItem }) => {
   return (
     <li>
       {/* Add an onClick that will let you add a feature to your car */}
-      <button
-        className="button"
-        onClick={handleClick}
-        value={props.feature.name}
-      >
+      <button className="button" onClick={e => buyItem(feature)}>
         Add
       </button>
-      {props.feature.name} (+{props.feature.price})
+      {feature.name} (+{feature.price})
     </li>
   );
 };
 
 function mapstateToProps(state) {
-  return {
-    features: state.features
-  };
+  return {};
 }
 
 export default connect(mapstateToProps, { buyItem })(AdditionalFeature);
