@@ -6,7 +6,6 @@ import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
 import Counter from "./components/Counter";
 
-import * as actions from "./state/actionCreators";
 import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
 import * as reducers from "./state/reducers";
@@ -25,8 +24,8 @@ const App = props => {
 
   const mainReducer = combineReducers({
     count: reducers.countReducer,
-    car: reducers.carReducer
-    // additionalFeatures: reducers.additionalFeaturesReducer
+    car: reducers.carReducer,
+    additionalFeatures: reducers.additionalFeaturesReducer
   });
 
   const store = createStore(
@@ -50,7 +49,6 @@ const App = props => {
           <AddedFeatures />
         </div>
         <div className="box">
-          <Counter />
           <AdditionalFeatures />
           <Total />
         </div>

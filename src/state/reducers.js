@@ -47,3 +47,9 @@ export function carReducer(car = initialState.car, action) {
       return car;
   }
 }
+
+export function additionalFeaturesReducer(
+  additionalFeatures = initialState.additionalFeatures
+) {
+  return additionalFeatures;
+}
