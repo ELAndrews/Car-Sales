@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const Total = ({ car, additionalPrice }) => {
+const Total = ({ car, additionalCosts }) => {
+  debugger;
   return (
     <div className="content">
-      <h4>Total Amount: ${car.price + additionalPrice}</h4>
+      <h4>Total Amount: ${car.price + additionalCosts}</h4>
     </div>
   );
 };
@@ -16,4 +17,4 @@ function mapStatetoProps(state) {
   };
 }
 
-export default connect(mapStatetoProps, {})(Total);
+export default connect(mapStatetoProps)(Total);

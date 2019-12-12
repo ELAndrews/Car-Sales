@@ -1,15 +1,5 @@
 import * as types from "./actionTypes";
 
-const initialCount = 0;
-export function countReducer(count = initialCount, action) {
-  switch (action.type) {
-    case types.INCREMENT:
-      return count + 1;
-    default:
-      return count;
-  }
-}
-
 const initialState = {
   additionalCosts: 0,
   car: {
@@ -52,4 +42,18 @@ export function additionalFeaturesReducer(
   additionalFeatures = initialState.additionalFeatures
 ) {
   return additionalFeatures;
+}
+
+export function additionalCostsReducer(
+  additionalCosts = initialState.additionalCosts,
+  action
+) {
+  switch (action.type) {
+    case types.BUYITEM:
+      return additionalCosts + 2;
+    case types.REMOVEFEATURE:
+      return additionalCosts - action.payload.feature.price;
+    default:
+      return additionalCosts;
+  }
 }
