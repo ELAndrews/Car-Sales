@@ -50,7 +50,7 @@ export function additionalCostsReducer(
 ) {
   switch (action.type) {
     case types.BUYITEM:
-      return additionalCosts + 2;
+      return additionalCosts + action.payload.feature.price;
     case types.REMOVEFEATURE:
       return additionalCosts - action.payload.feature.price;
     default:

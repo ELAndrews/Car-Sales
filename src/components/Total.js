@@ -13,7 +13,7 @@ const Total = ({ car, additionalCosts }) => {
 function mapStatetoProps(state) {
   return {
     car: state.car,
-    additionalPrice: state.additionalPrice
+    additionalCosts: state.additionalCosts
   };
 }
 
